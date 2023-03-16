@@ -53,6 +53,7 @@ async def get_user_text_handler(message: Message):
         text = message.text
         btn = await languages_btn()
         await message.answer(text, reply_markup=btn)
+    else:
         btn = await show_channels()
         msg = f"Hurmatli <b>{message.from_user.full_name}</b>\n" \
               f"Botdan foydalanishdan oldin quyidagi kanallarga obuna buling !!!"
