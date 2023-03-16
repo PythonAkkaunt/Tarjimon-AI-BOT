@@ -9,7 +9,7 @@ async def show_channels():
         btn = InlineKeyboardButton(text=channel[0], url=channel[2])
         keyboard.insert(btn)
 
-    done = InlineKeyboardButton(text="✅ A`zo Bo`ldim ✅", callback_data="bot")
+    done = InlineKeyboardButton(text="✅ A`zo Bo`ldim ✅", callback_data="sub_channels_bot")
     keyboard.insert(done)
 
     return keyboard

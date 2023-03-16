@@ -15,8 +15,8 @@ POSTGRESQL_URL = f'postgresql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}/{DB_NAME}'
 
 
 CHANNELS = [
-    ["1 - kanal", "-1001970532229", "https://t.me/botlar_uchun_kanal_1"],
-    ["2 - kanal", "-1001938208135", "https://t.me/botlar_uchun_kanal_02"]
+    ["1 - kanal", "-1001938208135", "https://t.me/botlar_uchun_kanal_1"],
+    ["2 - kanal", "-1005813796984", "https://t.me/+YetoaxIAtJtmN2My"]
 ]
 
 
