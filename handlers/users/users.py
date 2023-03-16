@@ -1,8 +1,10 @@
 from aiogram import Dispatcher
 from aiogram.types import *
 
+from keyboards.inline.channels import show_channels
 from keyboards.inline.users_btn import languages_btn
 from loader import dp
+from utils.misc.subs import check_sub_channels
 from utils.misc.text_translator import text_trans
 from database.connections import add_user
 
@@ -12,7 +14,18 @@ async def bot_start(message: Message):
     user_id = message.from_user.id
     user_name = message.from_user.username
     await add_user(user_id, user_name)
-    await message.answer(f"Salom")
+
+    check = await check_sub_channels(message)
+    if check:
+        btn = await show_channels()
+        await message.answer(f"Assalomu aleykum", reply_markup=btn)
+    else:
+        btn = await show_channels()
+        msg = f"Hurmatli <b>{message.from_user.full_name}</b>\n" \
+              f"Botdan foydalanishdan oldin quyidagi kanallarga obuna buling !!!"
+        await message.answer(msg, reply_markup=btn)
+
+
 
 
 async def help_bot(message: Message):
